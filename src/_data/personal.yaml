@@ -1,11 +1,12 @@
-email: hola@somemail.com
-address: |-
-  Organization name
-  Your street
-  12345, city
-  Tel: +34 928231911
+email:
+address: #|-
+  #Organization name
+  #Your street
+  #12345, city
+  #Tel: +34 928231911
 platforms:
-  github: 'https://github.com/madrilene/eleventy-excellent'
-  mastodon: 'https://front-end.social/@lene'
-  bluesky: 'https://bsky.app/profile/lenesaile.com'
-  kofi: 'https://ko-fi.com/lenesaile'
+  github: 'https://github.com/tcn33'
+  mastodon: 'https://mastodon.social/@tcn33'
+  bluesky: 'https://bsky.app/profile/tcn33.bsky.social'
+  #kofi: 'https://ko-fi.com/lenesaile'
+  linkedin: 'https://linkedin.com/in/tobynieboer'
