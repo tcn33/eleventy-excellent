@@ -20,6 +20,7 @@ import events from './src/_config/events.js';
 import filters from './src/_config/filters.js';
 import plugins from './src/_config/plugins.js';
 import shortcodes from './src/_config/shortcodes.js';
+import readingTime from 'eleventy-plugin-reading-time';
 
 export default async function (eleventyConfig) {
   // --------------------- Events: before build
@@ -50,6 +51,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPlugin(plugins.EleventyRenderPlugin);
   eleventyConfig.addPlugin(plugins.rss);
   eleventyConfig.addPlugin(plugins.syntaxHighlight);
+  eleventyConfig.addPlugin(readingTime);
 
   eleventyConfig.addPlugin(plugins.webc, {
     components: ['./src/_includes/webc/**/*.webc'],
@@ -85,6 +87,12 @@ export default async function (eleventyConfig) {
   eleventyConfig.addFilter('shuffle', filters.shuffleArray);
   eleventyConfig.addFilter('alphabetic', filters.sortAlphabetically);
   eleventyConfig.addFilter('slugify', filters.slugifyString);
+  // custom filter
+  eleventyConfig.addFilter('readTime', (html) => {
+    const words = html.split(/\s+/).length;
+    const minutes = Math.max(1, Math.round(words / 225));
+    return `${minutes} min read`;
+  });
 
   // --------------------- Shortcodes
   eleventyConfig.addShortcode('svg', shortcodes.svgShortcode);

@@ -18,7 +18,7 @@ schema: BlogPosting
         <span class="button" data-small-button data-button-variant="tertiary">draft</span>
       {%- endif %}
       <!-- date -->
-      {% set definedDate = date %} {% include "partials/date.njk" %}
+      {% set definedDate = date %} {% include "partials/date.njk" %} • &nbsp;{{ content | readTime }}
       {%
         if tags.length >
         1
